@@ -1,8 +1,15 @@
-target/
-.mvn
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+
+### Gradle ###
+.gradle
+/build/
+common/build/
+client/build/
+server/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
