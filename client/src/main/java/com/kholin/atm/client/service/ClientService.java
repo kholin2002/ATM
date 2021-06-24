@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 public class ClientService {
 
     @Value("${atm.host.getClientByCard}")
-    String getClientURI;
+    private String getClientURI;
 
     public ClientDTO getClient(CardDTO card) {
         RestTemplate restTemplate = new RestTemplate();

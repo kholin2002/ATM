@@ -12,7 +12,6 @@
     <artifactId>client</artifactId>
 
     <properties>
-        <common.version>1.0-SNAPSHOT</common.version>
         <spring-boot-starter-thymeleaf.version>2.3.11.RELEASE</spring-boot-starter-thymeleaf.version>
     </properties>
 
@@ -20,7 +19,7 @@
         <dependency>
             <artifactId>common</artifactId>
             <groupId>com.kholin.atm</groupId>
-            <version>${common.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

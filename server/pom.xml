@@ -5,7 +5,7 @@
     <parent>
         <artifactId>main</artifactId>
         <groupId>com.kholin.atm</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,14 +13,13 @@
 
     <properties>
         <modelmapper.version>2.4.3</modelmapper.version>
-        <common.version>1.0-SNAPSHOT</common.version>
     </properties>
 
     <dependencies>
         <dependency>
             <artifactId>common</artifactId>
             <groupId>com.kholin.atm</groupId>
-            <version>${common.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.modelmapper</groupId>

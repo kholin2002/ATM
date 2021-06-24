@@ -19,7 +19,7 @@
             <label for="cvc2">CVC2</label><br>
             <input id="cvc2" name="cvc2" type="text" maxlength="3" size="3" th:value="${card} ? ${card.cvc2}"/>
             <span class="example">Пример: 123</span><br>
-            <input type="submit">
+            <input type="submit" value="Отправить запрос">
         </form>
         <div class="errors" th:if="${errors}">
             <p th:each="error : ${errors}" th:text="${error}"></p>
