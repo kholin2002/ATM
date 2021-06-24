@@ -8,8 +8,8 @@
 .gradle
 /build/
 common/build/
-client/build/
-server/build/
+web/build/
+rest/build/
 gradle-app.setting
 !gradle-wrapper.jar
 .gradletasknamecache

@@ -1,8 +1,0 @@
-com/kholin/atm/web/exception/MultipleErrorsException.java
- com.kholin.atm.web.exception.MultipleErrorsException
-com/kholin/atm/web/Main.java
- com.kholin.atm.web.Main
-com/kholin/atm/web/controller/ATMController.java
- com.kholin.atm.web.controller.ATMController
-com/kholin/atm/web/service/ClientService.java
- com.kholin.atm.web.service.ClientService
