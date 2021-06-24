@@ -2,7 +2,7 @@
 description = 'Хранит и предоставляет данные о клиентах, счетах, картах'
 dependencies {
   implementation project(':common')
-  implementation 'org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE'
+  implementation 'org.springframework.boot:spring-boot-starter-web:2.3.11.RELEASE'
   implementation 'org.modelmapper:modelmapper:2.4.3'
   implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.3.11.RELEASE'
   runtime 'com.h2database:h2:1.4.200'
