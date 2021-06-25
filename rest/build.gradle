@@ -8,5 +8,5 @@ dependencies {
   implementation 'org.springdoc:springdoc-openapi-ui:1.4.8'
   implementation 'org.modelmapper:modelmapper:2.4.3'
   implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.3.11.RELEASE'
-    runtime 'com.h2database:h2:1.4.200'
+  runtime 'com.h2database:h2:1.4.200'
 }

@@ -13,7 +13,7 @@ import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 @Configuration
 @OpenAPIDefinition(
         info = @Info(
-                title = "Rest API банковской части",
+                title = "API банковской части",
                 contact = @Contact(name = "George Kholin", email = "kholin2002@gmail.com")
         )
 )
