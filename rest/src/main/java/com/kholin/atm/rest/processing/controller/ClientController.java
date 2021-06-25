@@ -3,6 +3,8 @@ package com.kholin.atm.rest.processing.controller;
 import com.kholin.atm.common.dto.CardDTO;
 import com.kholin.atm.common.dto.ClientDTO;
 import com.kholin.atm.rest.processing.service.ClientService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,13 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.Set;
 
+@Tag(name = "ClientController", description = "Работа с базой клиентов")
 @RestController
 @AllArgsConstructor
 @Log
-public class HostRestController {
+public class ClientController {
 
     private final ClientService clientService;
 
+    @Operation(description = "Получить клиента по идентификатору")
     @GetMapping(value = "/clients/{clientId}")
     public ClientDTO getClient(@PathVariable long clientId) {
         log.info("/clients/" + clientId);
@@ -27,6 +31,7 @@ public class HostRestController {
         return response;
     }
 
+    @Operation(description = "Получить клиента по карте")
     @GetMapping(value = "/clients", params = {"number","expire","cvc2"})
     public ClientDTO getClient(@Valid CardDTO request) {
         log.info("/clients?" + request.toString());
@@ -35,6 +40,7 @@ public class HostRestController {
         return response;
     }
 
+    @Operation(description = "Получить список всех клиентов")
     @GetMapping(value = "/clients/all")
     public Set<ClientDTO> getClients() {
         log.info("/clients/all");

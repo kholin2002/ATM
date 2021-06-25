@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
-public class HostRestControllerAdvice extends ResponseEntityExceptionHandler {
+public class RestControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(CardNotFoundException.class)
     public ResponseEntity<Object> handleException(CardNotFoundException ex, WebRequest request) {
