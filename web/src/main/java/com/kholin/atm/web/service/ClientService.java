@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @Log
 public class ClientService {
 
-    @Value("${atm.host.getClientByCard}")
+    @Value("${atm.rest.getClientByCard}")
     private String getClientURI;
 
     public ClientDTO getClient(CardDTO card) {

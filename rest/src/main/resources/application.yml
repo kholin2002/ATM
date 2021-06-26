@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:atm
+    initialize: true
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
