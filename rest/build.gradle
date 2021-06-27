@@ -1,0 +1,12 @@
+
+description = 'Хранит и предоставляет данные о клиентах, счетах, картах'
+
+dependencies {
+  implementation project(':common')
+  implementation 'org.springframework.boot:spring-boot-starter-web:2.3.11.RELEASE'
+  implementation 'io.swagger.core.v3:swagger-annotations:2.1.9'
+  implementation 'org.springdoc:springdoc-openapi-ui:1.4.8'
+  implementation 'org.modelmapper:modelmapper:2.4.3'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.3.11.RELEASE'
+  runtime 'com.h2database:h2:1.4.200'
+}

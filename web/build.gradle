@@ -1,0 +1,7 @@
+
+description = 'Реализует UI для работы с клиентскими данными'
+dependencies {
+  implementation project(':common')
+  implementation 'org.springframework.boot:spring-boot-starter-web:2.3.11.RELEASE'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.3.11.RELEASE'
+}

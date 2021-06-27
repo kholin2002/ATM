@@ -1,0 +1,8 @@
+rootProject.name = 'atm'
+include ':common'
+include ':rest'
+include ':web'
+
+project(':common').projectDir = "$rootDir/common" as File
+project(':rest').projectDir = "$rootDir/rest" as File
+project(':web').projectDir = "$rootDir/web" as File

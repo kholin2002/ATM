@@ -1,0 +1,25 @@
+allprojects  {
+  group = 'com.kholin.atm'
+  version = '1.0.1'
+}
+
+subprojects {
+  apply plugin: 'java'
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+  tasks.withType(JavaCompile) {
+  	options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+  }
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.3.11.RELEASE'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+  }
+
+}
