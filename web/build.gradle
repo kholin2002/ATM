@@ -1,7 +1,16 @@
 
 description = 'Реализует UI для работы с клиентскими данными'
+
+apply plugin: 'application'
+mainClassName = 'com.kholin.atm.web.Main'
+
 dependencies {
   implementation project(':common')
   implementation 'org.springframework.boot:spring-boot-starter-web:2.3.11.RELEASE'
   implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.3.11.RELEASE'
 }
+
+jar {
+  manifest.attributes('Main-Class':mainClassName)
+}
+
