@@ -6,7 +6,7 @@ import com.kholin.atm.common.ErrorMessage;
 import com.kholin.atm.common.dto.CardDTO;
 import com.kholin.atm.common.dto.ClientDTO;
 import com.kholin.atm.web.exception.MultipleErrorsException;
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-@Log
+@Slf4j
 public class ClientService {
 
     @Value("${atm.rest.getClientByCard}")
@@ -24,12 +24,13 @@ public class ClientService {
     public ClientDTO getClient(CardDTO card) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<ClientDTO> responseEntity;
+        log.debug("GET " + getClientURI, card.getNumber(), card.getExpire(), card.getCvc2());
         try {
             responseEntity = restTemplate
                     .getForEntity(getClientURI, ClientDTO.class, card.getNumber(), card.getExpire(), card.getCvc2());
         }
         catch (HttpClientErrorException | HttpServerErrorException e) {
-            log.info("response: " + e.getStatusCode() + " - " + e.getMessage());
+            log.debug("{}: {}", e.getStatusCode(), e.getResponseBodyAsString());
             try {
                 throw new MultipleErrorsException(
                         new ObjectMapper().readValue(e.getResponseBodyAsString(), ErrorMessage.class).getErrors());
@@ -39,7 +40,7 @@ public class ClientService {
             }
         }
 
-        log.info("response: " + responseEntity.getBody());
+        log.debug("{}: {}", responseEntity.getStatusCode(), responseEntity.getBody());
         return responseEntity.getBody();
     }
 

@@ -2,6 +2,7 @@ package com.kholin.atm.rest.processing.controller;
 
 import com.kholin.atm.common.ErrorMessage;
 import com.kholin.atm.rest.processing.exception.CardNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
+@Slf4j
 public class RestControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(CardNotFoundException.class)
@@ -37,8 +39,10 @@ public class RestControllerAdvice extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
         if (Objects.isNull(body)) {
+            log.error("INTERNAL ERROR", ex);
             body = new ErrorMessage("Ошибка сервера");
         }
+        log.debug("RESPONSE {}", body);
         return super.handleExceptionInternal(ex, body, headers, status, request);
     }
 

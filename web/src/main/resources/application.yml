@@ -7,3 +7,11 @@ spring:
 atm:
   rest:
     getClientByCard: http://127.0.0.1:8080/clients/?number={number}&expire={expire}&cvc2={cvc2}
+logging:
+  pattern:
+    console: "%white(%d{dd.MM.yyyy HH:mm:ss.SSS}) %highlight(%5p) [%t] %white(%C{1.}): %m%n%throwable"
+  level:
+    com:
+      kholin:
+        atm:
+          web: DEBUG

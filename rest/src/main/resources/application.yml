@@ -12,3 +12,11 @@ spring:
   h2:
     console:
       enabled: true
+logging:
+  pattern:
+    console: "%white(%d{dd.MM.yyyy HH:mm:ss.SSS}) %highlight(%5p) [%t] %white(%C{1.}): %m%n%throwable"
+  level:
+    com:
+      kholin:
+        atm:
+          rest: DEBUG
