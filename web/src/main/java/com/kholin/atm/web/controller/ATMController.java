@@ -5,7 +5,7 @@ import com.kholin.atm.common.dto.ClientDTO;
 import com.kholin.atm.web.exception.MultipleErrorsException;
 import com.kholin.atm.web.service.ClientService;
 import lombok.AllArgsConstructor;
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @AllArgsConstructor
-@Log
+@Slf4j
 public class ATMController {
     private final ClientService clientService;
 
@@ -35,7 +35,7 @@ public class ATMController {
 
     @PostMapping(value = "/")
     public String login(Model model, HttpSession session, CardDTO card) {
-        log.info("/?" + card.toString());
+        log.debug("REQUEST /?{}", card);
 
         ClientDTO client;
         try {
