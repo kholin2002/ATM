@@ -1,3 +1,6 @@
 
 description = 'Содержит DTO для обмена между rest и web'
 
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+}

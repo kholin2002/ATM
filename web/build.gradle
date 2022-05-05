@@ -1,11 +1,5 @@
 
-plugins {
-  id 'org.springframework.boot' version '2.3.11.RELEASE'
-}
-
 description = 'Реализует UI для работы с клиентскими данными'
-
-apply plugin: 'io.spring.dependency-management'
 
 dependencies {
   implementation project(':common')
