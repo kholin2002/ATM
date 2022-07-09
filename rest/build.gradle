@@ -1,3 +1,6 @@
+plugins {
+  id 'org.springframework.boot'
+}
 
 description = 'Хранит и предоставляет данные о клиентах, счетах, картах'
 
