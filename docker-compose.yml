@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  rest:
+    build: rest
+  web:
+    build: web
+    ports:
+      - "8080:8080"
+    environment:
+      - atm_rest_getClientByCard=http://rest:8081/clients/?number={number}&expire={expire}&cvc2={cvc2}

@@ -1,12 +1,12 @@
 server:
-  port: 8081
+  port: 8080
 spring:
   thymeleaf:
     cache: false
     encoding: UTF-8
 atm:
   rest:
-    getClientByCard: http://127.0.0.1:8080/clients/?number={number}&expire={expire}&cvc2={cvc2}
+    getClientByCard: http://localhost:8081/clients/?number={number}&expire={expire}&cvc2={cvc2}
 logging:
   pattern:
     console: "%white(%d{dd.MM.yyyy HH:mm:ss.SSS}) %highlight(%5p) [%t] %white(%C{1.}): %m%n%throwable"

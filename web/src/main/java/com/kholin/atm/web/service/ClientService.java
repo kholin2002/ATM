@@ -39,6 +39,9 @@ public class ClientService {
                 throw new MultipleErrorsException("Ответ сервера нераспознан");
             }
         }
+        catch (Exception e) {
+            throw new MultipleErrorsException("Ошибка обращения к серверу");
+        }
 
         log.debug("{}: {}", responseEntity.getStatusCode(), responseEntity.getBody());
         return responseEntity.getBody();
